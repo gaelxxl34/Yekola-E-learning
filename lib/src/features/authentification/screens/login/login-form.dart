@@ -98,7 +98,9 @@ class _LoginFormState extends State<LoginForm> {
                       backgroundColor: tDarkColor,
                       side: BorderSide(color: tDarkColor),
                       padding: EdgeInsets.symmetric(vertical: tButtonHeight)),
-                  onPressed: SignIn,
+                  onPressed: (){
+                    Get.to(() => Dashboard());
+                  },
                   child: Text(
                     tLogin.toUpperCase(),
                   ),

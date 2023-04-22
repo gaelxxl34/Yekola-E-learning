@@ -18,7 +18,9 @@ class ProfileScreen extends StatelessWidget {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
 
     return Scaffold(
+      backgroundColor: DSecondaryColor,
       appBar: AppBar(
+        backgroundColor: DSecondaryColor,
         leading: IconButton(
           onPressed: () {
             Get.to(() => Dashboard());
@@ -92,7 +94,7 @@ class ProfileScreen extends StatelessWidget {
                     width: 30, height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey.withOpacity(0.2),
+                      color: Colors.black.withOpacity(0.2),
                     ),
                   child: Icon(LineAwesomeIcons.angle_right,size: 18.0, color: Colors.grey,),
               ),
@@ -112,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
                   width: 30, height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                   child: Icon(LineAwesomeIcons.angle_right,size: 18.0, color: Colors.grey,),
                 ),
@@ -132,7 +134,7 @@ class ProfileScreen extends StatelessWidget {
                   width: 30, height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                   child: Icon(LineAwesomeIcons.angle_right,size: 18.0, color: Colors.grey,),
                 ),
@@ -152,7 +154,7 @@ class ProfileScreen extends StatelessWidget {
                   width: 30, height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                   child: Icon(LineAwesomeIcons.angle_right,size: 18.0, color: Colors.grey,),
                 ),
@@ -169,12 +171,12 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   child: Icon(LineAwesomeIcons.alternate_sign_out, color: tAccentColor,),
                 ),
-                title: Text(tMenu1, style: TextStyle(color: Colors.red),),
+                title: Text(tMenu1, style: TextStyle(color: Colors.white),),
                 trailing: Container(
                   width: 30, height: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.grey.withOpacity(0.2),
+                    color: Colors.black.withOpacity(0.2),
                   ),
                   child: Icon(LineAwesomeIcons.angle_right,size: 18.0, color: Colors.grey,),
                 ),

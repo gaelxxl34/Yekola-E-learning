@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 const tDarkColor = Color(0xFF000000);
 const tAccentColor = Color(0xFF08155E);
-const tSecondaryColor = Color(0xFF74747C);
-const DSecondaryColor = Color(0xFFEBEBEF);
+const tSecondaryColor = Color(0xFFBEBEFF);
+const DSecondaryColor = Color(0xff3a69cb);
 const tWhiteColor = Colors.white;
 const tRed = Color(0xFF7A0511);
 

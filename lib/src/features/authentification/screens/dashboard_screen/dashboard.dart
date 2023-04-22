@@ -1,13 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_strings.dart';
 import '../../../../repository/authentification_repository/authentification_repository.dart';
 import '../profile/profile_screen.dart';
+import 'drawer_screens/Javascript.dart';
+import 'drawer_screens/contact_us.dart';
+import 'drawer_screens/flutter.dart';
+import 'drawer_screens/java.dart';
+import 'drawer_screens/python.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -18,35 +25,89 @@ class Dashboard extends StatelessWidget {
 
 
     return Scaffold(
+      backgroundColor: DSecondaryColor,
       appBar: AppBar(
-        leading: Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
         title: Text(
           ".Yekola/",
           style: Theme.of(context).textTheme.headline4,
         ),
         centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
+        backgroundColor: DSecondaryColor,
+        iconTheme: IconThemeData(
+          color: Colors.black, // set the color of the default icon
+        ),
         actions: [
-          Container(
-            margin: EdgeInsets.only(right: 20, top: 7),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
+          IconButton(
+            onPressed: () {
+              Get.to(() => ProfileScreen());
+            },
+            icon: CircleAvatar(
+              backgroundImage: AssetImage(ProfileImg2),
             ),
-            child: IconButton(
-              onPressed: () {
-                Get.to(() => ProfileScreen());
-              },
-              icon: Image(
-                image: AssetImage(ProfileImg2),
-              ),
-            ),
+              color: Colors.black
           ),
         ],
       ),
+      drawer: Drawer(
+        backgroundColor: tSecondaryColor,
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: DSecondaryColor
+              ),
+              accountEmail: Text("gongoriko10gmail.com"),
+              accountName: Text("Gael Bindu"),
+              currentAccountPicture: CircleAvatar(
+                foregroundImage: AssetImage(ProfileImg2),
+              ),
+              otherAccountsPictures: [
+                CircleAvatar(foregroundImage: AssetImage(ProfileImg2)),
+                CircleAvatar(foregroundImage: AssetImage(ProfileImg2)),
+              ],
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text("Contact Us"),
+              onTap: () {
+                Get.to(()=> ContactUs());
+              },
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text("Courses"),
+            ),
+            ListTile(
+              leading: Icon(Icons.flutter_dash_sharp),
+              title: Text("Flutter"),
+              onTap: () {
+                Get.to(()=> FlutterCourse());
+              },
+            ),
+            ListTile(
+              leading: Icon(LineAwesomeIcons.python),
+              title: Text("Python"),
+              onTap: () => Get.to(()=> PythonCourse()),
+            ),
+            ListTile(
+              leading: Icon(LineAwesomeIcons.java),
+              title: Text("Java"),
+              onTap: () => Get.to(()=> Java()),
+            ),
+            ListTile(
+              leading: Icon(LineAwesomeIcons.javascript__js_),
+              title: Text("Javascript"),
+              onTap: () => Get.to(()=> Javascript()),
+            ),
+          ],
+        ),
+      ),
+
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(20.0),
@@ -81,14 +142,31 @@ class Dashboard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      DashboardSearching,
-                      style: txttheme.headline2?.apply(
-                        color: Colors.grey.withOpacity(0.5),
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.search),
+                          prefixIconColor: Colors.black,
+                          hintText: DashboardSearching,
+                          hintStyle: TextStyle(color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(width: 1, color: Colors.black),
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(width: 2, color: DSecondaryColor),
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          filled: true,
+                          fillColor: tSecondaryColor,
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 0.0, ), // add this
+                        ),
                       ),
                     ),
+                    SizedBox(width: 5,),
                     Icon(
-                      Icons.mic,
+                      CupertinoIcons.pencil_outline,
                       size: 25,
                     ),
                   ],
@@ -246,7 +324,7 @@ class Dashboard extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.0),
-                          color: DSecondaryColor),
+                          color: tSecondaryColor),
                       padding:
                           EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                       child: Column(
@@ -292,7 +370,7 @@ class Dashboard extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
-                              color: DSecondaryColor),
+                              color: tSecondaryColor),
                           padding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 20),
                           child: Column(
@@ -355,14 +433,14 @@ class Dashboard extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: [
                     SizedBox(
-                      width: 360,
+                      width: 375,
                       height: 200,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10, top: 5),
                         child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
-                              color: DSecondaryColor),
+                              color: tSecondaryColor),
                           padding: EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -390,7 +468,7 @@ class Dashboard extends StatelessWidget {
                                 children: [
                                   ElevatedButton(
                                     style: ElevatedButton.styleFrom(shape: CircleBorder(), backgroundColor: Colors.black),
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(()=> FlutterCourse()),
                                     child: Icon(Icons.play_arrow),
                                   ),
                                   SizedBox(
@@ -399,7 +477,7 @@ class Dashboard extends StatelessWidget {
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("3 sections", style: txttheme.headline4, overflow: TextOverflow.ellipsis,),
+                                      Text("3 Levels", style: txttheme.headline4, overflow: TextOverflow.ellipsis,),
                                       Text("Programming languages", style: txttheme.bodyText2, overflow: TextOverflow.ellipsis,),
                                     ],
                                   )
@@ -411,14 +489,14 @@ class Dashboard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 360,
+                      width: 375,
                       height: 200,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10, top: 5),
                         child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
-                              color: DSecondaryColor),
+                              color: tSecondaryColor),
                           padding: EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -467,14 +545,14 @@ class Dashboard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 360,
+                      width: 375,
                       height: 200,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 10, top: 5),
                         child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
-                              color: DSecondaryColor),
+                              color: tSecondaryColor),
                           padding: EdgeInsets.all(10),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

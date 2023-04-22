@@ -14,7 +14,14 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: 'AIzaSyBk5o-Z2ZzZ0GdUODu0FndPL25OYBWe6hI',
+      appId: '1:571105515916:web:b2038697491ab63c3bdea9',
+      messagingSenderId: '571105515916',
+      projectId: 'flutter-login-app-7bd8a',
+    ),
+  )
       .then((value) => Get.put(AuthentificationRepository()));
   runApp(const MyApp());
 }

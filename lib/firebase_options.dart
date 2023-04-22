@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,6 +43,15 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBk5o-Z2ZzZ0GdUODu0FndPL25OYBWe6hI',
+    appId: '1:571105515916:web:b2038697491ab63c3bdea9',
+    messagingSenderId: '571105515916',
+    projectId: 'flutter-login-app-7bd8a',
+    authDomain: 'flutter-login-app-7bd8a.firebaseapp.com',
+    storageBucket: 'flutter-login-app-7bd8a.appspot.com',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCiT2FkJQH0inqtdYkAZF4AzVaDWIGwydg',
     appId: '1:571105515916:android:d3124a8c3904bbfe3bdea9',
@@ -63,6 +66,18 @@ class DefaultFirebaseOptions {
     messagingSenderId: '571105515916',
     projectId: 'flutter-login-app-7bd8a',
     storageBucket: 'flutter-login-app-7bd8a.appspot.com',
+    androidClientId: '571105515916-8oalcsvd547cjv3oph7kfbfl0igbegh2.apps.googleusercontent.com',
+    iosClientId: '571105515916-sun263lmsteibpsdg5qsevhsf19mpnv1.apps.googleusercontent.com',
+    iosBundleId: 'com.example.authentification',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyA0wpw-QgrtTC28xRzPdtZjKs52JRcLw00',
+    appId: '1:571105515916:ios:6e71fef0f34bfd833bdea9',
+    messagingSenderId: '571105515916',
+    projectId: 'flutter-login-app-7bd8a',
+    storageBucket: 'flutter-login-app-7bd8a.appspot.com',
+    androidClientId: '571105515916-8oalcsvd547cjv3oph7kfbfl0igbegh2.apps.googleusercontent.com',
     iosClientId: '571105515916-sun263lmsteibpsdg5qsevhsf19mpnv1.apps.googleusercontent.com',
     iosBundleId: 'com.example.authentification',
   );
