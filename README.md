@@ -9,12 +9,11 @@ To get started with Yekola, simply create an account on our website and start br
 ## Features
 
 Yekola is designed to provide the ultimate coding experience by offering the following features:
-- **On-demand Courses:** Our platform offers a wide range of coding lessons that can be accessed anytime, anywhere, so you can learn at your own pace.
-- **Mentor Support:** Our team of mentors are always available to answer your questions and guide you through your coding journey. Having a mentor can save you countless hours of frustration and help you stay motivated.
-- **Engaging Video Tutorials:** Our video tutorials are designed to be engaging and fun, making it easier to learn complex concepts. You'll be able to follow along as our expert instructors guide you through each step of the lesson.
-- **Curated Course List:** Our course list is carefully curated to provide students with high quality and up-to-date lessons that cover a wide range of coding topics.
 
-I believe that Yekola is the best platform to learn how to code, and we're committed to providing the best possible experience for our students. Whether you're new to coding or looking to take your skills to the next level, Yekola is here to help you achieve your goals. 
+- **On-demand Courses:** Our platform offers a wide range of interactive coding courses that can be accessed anytime, anywhere so you can learn at your own pace.
+- **Dedicated Mentors:** Get help from our dedicated mentors available to answer your questions and provide guidance throughout your coding journey.
+- **Engaging Tutorials:** Our video tutorials are designed to engage and be fun, making it easier to learn complex topics.
+- **Thoughtfully Curated Course List:** Our course list is carefully curated for high quality and up-to-date lessons that cover a wide range of coding topics and languages.
 
 Here are some screenshots of our platform:
 
